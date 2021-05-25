@@ -1,0 +1,11 @@
+User Stories
+1.	As a logged-out user, I want to be able to login.
+2.	As a logged-in user, I want to see the full list of courses available at Kellogg.
+3.	As a logged-in user, I want to search courses by Course name of Course number or professor’s name.
+4.	As a logged-in user, I want to tag the courses that I’m interested in and be able to check them later.
+5.	As a logged-in user, I want to sort the courses by TCE points from high to low or low to high.
+6.	As a logged-in user, I want to sort the courses by bidding points from high to low or low to high.
+7.	As a logged-in user, I want to search courses by a bidding points range (e.g. 200~500 points).
+8.	As a logged-in user, I want to get the bidding points of certain courses in each bidding rounds.
+9.	As a logged-in user, I want to see a graph showing the bidding point historical trend of a certain course.
+10.	As a logged-in user, I want to compare two or three courses in the same page.
