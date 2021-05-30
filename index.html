@@ -5,6 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Final</title>
+  
+  <!-- Format table -->
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: center;
+      font-weight: normal;
+    }
+    a:link {
+  text-decoration: underline;
+    }
+    a:hover {
+    color: hotpink;
+    }
+    </style>
+    
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.css" />
 </head>
@@ -26,6 +46,82 @@
     firebase.initializeApp(firebaseConfig);
   </script>
   <script src="index.js"></script>
+
+
+  <div class = "logo-image"><img src="https://www.northwestern.edu/brand/images/Kellogg_horizontal_new.jpg" height="250" width="250"></div>
+  <h1 class="username my-4 mx-4 font-medium" id="userame"> Welcome, Jason! You can search Kellogg class by entering course number or instructor name below. </h1>
+  <div id = "search" class="my-4 mx-10">
+    <!-- <div class = "my-4 mx-4 font-medium"> Search Kellogg Class</div> -->
+    <div class = "text-center">
+      <form class = "flex">
+        <div class = "w-1/6">Course Name:</div>
+        <input name="Course" id="Course" placeholder="Enter course name" 
+        class="border border-gray-400 rounded p-2 mr-1 w-1/8">
+        <div class = "w-1/6">Instructor:</div>
+        <input name="Instructor" id="Instructor" placeholder="Enter instructor name" 
+        class="border border-gray-400 rounded p-2 mr-1 w-1/8">
+        <button class="Get selected class border bg-green-500 text-white rounded px-4 py-2">Go</button>
+      </form>
+    </div>
+  </div>
+
+  <br></br>
+
+  <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+  <table class="sortable text-center border m-auto p-auto " style="width:95%">
+    <tr>
+    <div class="header">
+        <th style="width:15%;">Course</th>
+        <th style="width:15%;">Course Num</th>
+        <th style="width:5%;">Credit </th>
+        <th style="width:15%;" >Instructor</th>
+        <th style="width:10%;">TCE</th>
+        <th style="width:10%;">Workload</th>
+        <th style="width:10%;">Quarter</th>
+        <th style="width:10%;">Phase</th>
+        <th style="width:10%;">Bidding Point</th>
+      </tr>
+    </div>
+    <div class="demo">
+      <tr class="border">
+        <th>The Economics of Energy Markets</th>
+        <th>STRT-958-0</th>
+        <th>1</th>
+        <th>Busse, Meghan</th>
+        <th>5</th>
+        <th>3</th>
+        <th>Spring 2021</th>
+        <th>Phase 1</th>
+        <th><a href="bid_plot.html" id="STRT-958-0">300</a></th>
+      </tr>
+      <tr class="border">
+        <th>FinTech Strategy</th>
+        <th>STRT-461-5</th>
+        <th>0.5</th>
+        <th>Markovich, Sarit</th>
+        <th>4</th>
+        <th>2.5</th>
+        <th>Fall 2021</th>
+        <th>Phase 2</th>
+        <th><a href="bid_plot.html" id="STRT-461-5">75</a></th>
+      </tr>
+      <tr class="border">
+        <th>Negotiations Fundamentals</th>
+        <th>MORS-472-5</th>
+        <th>0.5 </th>
+        <th>Blount, Sally</th>
+        <th>5</th>
+        <th>3</th>
+        <th>Fall 2020</th>
+        <th>Phase 3</th>
+        <th><a href="bid_plot.html" id="MORS-472-5">1000</a></th>
+      </tr>
+    </div>  
+
+  </table>
+
+  <div class="text-xs m-auto p-4">Note: You can view historical bidding data by clicking cell in Biddig Point column. </div>
+
 </body>
 
 </html>
