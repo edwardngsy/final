@@ -18,11 +18,14 @@
       font-weight: normal;
     }
     a:link {
-  text-decoration: underline;
+      text-decoration: underline;
     }
     a:hover {
-    color: hotpink;
+      color: hotpink;
     }
+
+    button:focus{background-color:red;}
+    
     </style>
     
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
@@ -60,12 +63,15 @@
         <div class = "w-1/6">Instructor:</div>
         <input name="Instructor" id="Instructor" placeholder="Enter instructor name" 
         class="border border-gray-400 rounded p-2 mr-1 w-1/8">
-        <button class="Get selected class border bg-green-500 text-white rounded px-4 py-2">Go</button>
+        <button class="Go selected class border bg-green-500 text-white rounded px-4 py-2">Go</button>
       </form>
     </div>
   </div>
 
-  <br></br>
+  <div class="taggedClass flex my-4 mx-4">
+    <div>The tagged class are: <strong>KIEI-451 - Intro to SW Development</strong> and <strong>FINC-431 - Finance II</strong>.</div>
+    <div><a href="course_comparison.html" class="ml-10">Compare two courses</a></div>
+  </div>
 
   <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
   <table class="sortable text-center border m-auto p-auto" style="width:95%">
@@ -80,6 +86,7 @@
         <th style="width:10%;">Quarter</th>
         <th style="width:10%;">Phase</th>
         <th style="width:10%;">Bidding Point</th>
+        <th style="width:10%;"> Tag </th>
       </tr>
     </div>
     <div class="demo">
@@ -93,6 +100,7 @@
         <th>Spring 2021</th>
         <th>Phase 1</th>
         <th><a href="bid_plot.html" id="STRT-958-0">300</a></th>
+        <th><button class="bg-green-500 text-white rounded px-4 py-2" id="STRT-958-0"> Tag </button> </th>
       </tr>
       <tr class="border">
         <th>FinTech Strategy</th>
@@ -104,6 +112,7 @@
         <th>Fall 2021</th>
         <th>Phase 2</th>
         <th><a href="bid_plot.html" id="STRT-461-5">75</a></th>
+        <th><button class="bg-green-500 text-white rounded px-4 py-2 id="STRT-461-5"> Tag </button> </th>
       </tr>
       <tr class="border">
         <th>Negotiations Fundamentals</th>
@@ -115,6 +124,7 @@
         <th>Fall 2020</th>
         <th>Phase 3</th>
         <th><a href="bid_plot.html" id="MORS-472-5">1000</a></th>
+        <th><button class="bg-green-500 text-white rounded px-4 py-2" id="MORS-472-5"> Tag </button> </th>
       </tr>
     </div>  
 

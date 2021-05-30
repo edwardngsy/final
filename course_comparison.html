@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Comparison</title>
+    
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
+
+      <!-- Format table -->
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: center;
+      font-weight: normal;
+    }
+    a:link {
+      text-decoration: underline;
+    }
+    a:hover {
+      color: hotpink;
+    }
+
+    button:focus{background-color:red;}
+    
+    </style>
+
+
+
+</head>
+<body>
+    <h1 class = "header font-bold text-center my-4 mx-4 text-2xl text-blue-800"> Course Comparison</h1>
+
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <table class="sortable text-center border m-auto p-auto" style="width:95%">
+      <tr>
+      <div class="header">
+          <th style="width:15%;">Course</th>
+          <th style="width:15%;">KIEI-451 - Intro to SW Development</th>
+          <th style="width:15%;">FINC-431 - Finance II</th>
+          <th style="width:15%;" >Difference</th>
+        </tr>
+
+      </div>
+      <div class="demo">
+        <tr class="TCE">
+          <th>TCE</th>
+          <th>5.3</th>
+          <th>4.8</th>
+          <th>0.5</th>
+        </tr>
+        <tr class="Workload">
+            <th>Workload</th>
+            <th>2.9</th>
+            <th>3.2</th>
+            <th>-0.3</th>
+          </tr>
+        <tr class="Bidding Phase I">
+          <th>Bidding Phase I</th>
+          <th>362</th>
+          <th>57</th>
+          <th>305</th>
+        </tr>
+        <tr class="Bidding Phase II">
+            <th>Bidding Phase II</th>
+            <th>812</th>
+            <th>204</th>
+            <th>608</th>
+          </tr>
+          <tr class="Bidding Phase III">
+            <th>Bidding Phase III</th>
+            <th>412</th>
+            <th>69</th>
+            <th>343</th>
+          </tr>
+    </table>
+    <br></br>
+    <div class="font-bold text-sm m-auto"><a href="index.html">Back to home</a></div>
+
+</body>
+</html>
