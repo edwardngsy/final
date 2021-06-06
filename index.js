@@ -32,28 +32,51 @@ firebase.auth().onAuthStateChanged(async function(user) {
     // Write the json-formatted data to the console in Chrome
     console.log(json)
 
-    // Grab a reference to the element with class name "demo" in memory
-    let courseDiv = document.querySelector(`.demo`)
+    // Create a variable for the course data
+    let courses = json.courseinfo
+
+    // // Get a reference to the "click me" button in memory
+    // let goButton = document.querySelector(`.go`)
+
+    // // Event listener for the "click me" button
+    // goButton.addEventListener(`click`, async function(event) {
 
     // Loop through the JSON data, for each Object representing a post:
-    for (let i=0; i < json.length; i++) {
-      // Store each object ("course") in memory
-      let course = json[i]
+    for (let i=0; i < courses.length; i++) {
+
+      // Create variables to store course related information in memory
+      let courseName = courses[i].name
+      let courseNumber = courses[i].number
+      let courseInstructorName = courses[i].instructorName
+      let sections = courses[i].section
+
+      console.log(courseName)
+
+      for (let j=0; j < sections.length; j++) {
+        let tce = sections[j].tce
+        let workload = sections[j].workload
+        let quarter = sections[j].quarter
+        let bidding1 = sections[j].bidding1
+        let bidding2 = sections[j].bidding2
+        let bidding3 = sections[j].bidding3
+
+      // Grab a reference to the element with "table" in memory
+      let table = document.querySelector(`table`)
 
       // Create some markup using the post data, insert into the "course" element
-      courseDiv.insertAdjacentHTML(`beforeend`, `
+      table.insertAdjacentHTML(`beforeend`, `
       <tr class="border">
-        <th>${course.name}</th>
-        <th>${course.number}</th>
-        <th>${course.instructor.name}</th>
-        <th>${course.section.tce}</th>
-        <th>${course.section.workload}</th>
-        <th>${course.section.quarter}</th>
-        <th>${course.section.bidding1}</th>
-        <th>${course.section.bidding2}</th>
-        <th>${course.section.bidding3}</th>
+        <td>${courseName}</td>
+        <td>${courseNumber}</td>
+        <td>${courseInstructorName}</td>
+        <td>${tce}</td>
+        <td>${workload}</td>
+        <td>${quarter}</td>
+        <td>${bidding1}</td>
+        <td>${bidding2}</td>
+        <td>${bidding3}</td>
       </tr>
-      `)
+      `)}
     }
 
   } else {

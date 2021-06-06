@@ -16,8 +16,8 @@ exports.handler = async function(event) {
   // create an object with the course data to hold the return value from our lambda
   let returnValue = {}
 
-  // set new Arraies as part of the return value
-  returnValue.section = []
+  // set a new Array as part of the return value
+  returnValue.courseinfo = []
 
   // loop through the post documents
   for (let i=0; i < course.length; i++) {
@@ -30,12 +30,10 @@ exports.handler = async function(event) {
     // create an Object to be added to lambda
     let courseObject = {
       name: courseData.name,
-      number: courseData.number,
-      instructor: [],
-      section: []
+      number: courseData.number
     }
 
-    console.log(courseObject)
+    courseObject.section = []
 
     // get the sections for this course, wait for it to return, store in memory
     let sectionQuery = await db.collection(`section`).where(`courseId`, `==`, courseId).get()
@@ -63,7 +61,7 @@ exports.handler = async function(event) {
       }
 
       // add the Object to the course
-      returnValue.section.push(sectionObject)
+      courseObject.section.push(sectionObject)
 
       // get the instructor info for this course, wait for it to return, store in memory
       let instructorQuery = await db.collection(`instructor`).doc(sectionData.instructorId).get()
@@ -72,11 +70,12 @@ exports.handler = async function(event) {
       let instructor = instructorQuery.data()
 
       // create an Object to be added to the course object of our lambda
-      returnValue.instructorName = instructor.name
+      courseObject.instructorName = instructor.name
     }
+    // add the Object to the course
+    returnValue.courseinfo.push(courseObject)
   }
-  
-  
+
   return {
     statusCode: 200,
     body: JSON.stringify(returnValue)
