@@ -2,8 +2,6 @@ firebase.auth().onAuthStateChanged(async function(user) {
   
   // check to see if user is logged-in (i.e. user exists)
   if (user) {
-    // write the user Object to the JavaScript console
-    console.log(user)
   
     // Build the markup for the sign-out button and set the HTML in the header
     document.querySelector(`.sign-in-or-sign-out`).innerHTML = `
@@ -21,6 +19,15 @@ firebase.auth().onAuthStateChanged(async function(user) {
       // redirect to the home page
       document.location.href = `index.html`
     })
+
+
+
+
+
+
+
+
+
   } else {
     // user is not logged-in, so show login
     // Initializes FirebaseUI Auth
