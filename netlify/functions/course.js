@@ -4,30 +4,31 @@ let firebase = require('./firebase')
 // /.netlify/functions/posts
 exports.handler = async function(event) {
 
-  // get the course name being requested
-  let courseName = event.queryStringParameters.courseName
+  // // get the course name being requested
+  // let courseName = event.queryStringParameters.courseName
 
   // establish a connection to firebase in memory
   let db = firebase.firestore()
 
   // perform a query to get the course information
-  let courseQuery = await db.collection(`course`).where(`courseName`, `==`, courseName).get()
+  let courseQuery = await db.collection(`courses`).get()
 
   // retrieve the documents from the query
-  let courses = courseQuery.docs
+  let course = courseQuery.docs
 
   // get the id from the document
-  let courseName = courses.name
   let courseId = course.id
 
   // get the data from the document
-  let courseData = courses.data()
+  let courseData = course.data()
 
   // create an Object to be added to lambda
   let courseObject = {
     name: courseData.name,
     number: courseData.number,
   }
+
+  console.log(courseObject)
 
   // set two new arraies as part of the course object
   courseObject.instructor = []
@@ -39,12 +40,12 @@ exports.handler = async function(event) {
   // get the documents from the query
   let section = sectionQuery.docs
 
-  // loop through the bidding documents
+  // loop through the section documents
   for (let i=0; i < section.length; i++) {
-    // get the section id from the bidding document
+    // get the section id from the section document
     let sectionId = section[i].id
     let instructorId = section[i].instructorId
-    // get the data from the bidding document
+    // get the data from the section document
     let sectionData = section[i].data()
 
     // create an Object to be added to the comments Array of the post
@@ -66,9 +67,6 @@ exports.handler = async function(event) {
 
     // retrieve the documents from the query
     let instructor = instructorQuery.docs
-
-    // get the id from the document
-    let instructorId = instructor.id
 
     // get the data from the document
     let instructorData = instructor.data()
