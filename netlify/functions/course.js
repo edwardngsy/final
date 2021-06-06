@@ -55,8 +55,7 @@ exports.handler = async function(event) {
       bidding2: sectionData.bidding2,
       bidding3: sectionData.bidding3,
       tce: sectionData.tce,
-      workload: sectionData.workload,
-      instructor: []
+      workload: sectionData.workload
     }
 
     // add the Object to the course
