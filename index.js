@@ -72,4 +72,4 @@ firebase.auth().onAuthStateChanged(async function(user) {
     // Starts FirebaseUI Auth
     ui.start(`.sign-in-or-sign-out`, authUIConfig)
     }
-  })
+})
