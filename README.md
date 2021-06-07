@@ -4,4 +4,4 @@
 
 Begin by cloning this project and running `npm install`, then replace the Firebase configuration in both `/netlify/functions/firebase.js` and `index.html` with your own Firebase configuration object.
 
-The content of this file is to be replaced by information on your final project, including the live Internet URL.
+Live internet URL: https://trusting-sammet-e032d8.netlify.app/
